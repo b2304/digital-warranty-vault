@@ -75,17 +75,17 @@ This will:
 - Expose API at http://localhost:8080
 
 
-🔧 Option 2: Manual
+### 🔧 Option 2: Manual
 # Start MySQL (manually or via Docker)
 mvn clean install
 mvn spring-boot:run
 Access: http://localhost:8080/swagger-ui.html (if Swagger is enabled)
 
-🧪 Testing
+### 🧪 Testing
 Run all unit and integration tests:
   mvn test
 
-📂 Liquibase Setup
+### 📂 Liquibase Setup
 Master file: changelog-master.xml
 
 Includes:
@@ -96,7 +96,7 @@ Optional: data-seed-changelog.xml
 To run Liquibase independently:
 mvn liquibase:update
 
-✨ Future Enhancements
+### ✨ Future Enhancements
 - Add JWT-based authentication
 - Email notifications for warranty expiry
 - Web dashboard UI
