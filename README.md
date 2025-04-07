@@ -70,12 +70,9 @@ A scheduled service runs daily using a thread pool to:
 docker-compose up --build
 
 This will:
-
-Build the Spring Boot app
-
-Start MySQL and initialize DB via Liquibase
-
-Expose API at http://localhost:8080
+- Build the Spring Boot app
+- Start MySQL and initialize DB via Liquibase
+- Expose API at http://localhost:8080
 
 
 🔧 Option 2: Manual
@@ -86,29 +83,22 @@ Access: http://localhost:8080/swagger-ui.html (if Swagger is enabled)
 
 🧪 Testing
 Run all unit and integration tests:
+  mvn test
 
-mvn test
 📂 Liquibase Setup
 Master file: changelog-master.xml
 
 Includes:
-
 users-changelog.xml
-
 products-changelog.xml
-
 Optional: data-seed-changelog.xml
 
 To run Liquibase independently:
-
 mvn liquibase:update
+
 ✨ Future Enhancements
-Add JWT-based authentication
-
-Email notifications for warranty expiry
-
-Web dashboard UI
-
-Role-based access
-
-Attach purchase receipts (file upload)
+- Add JWT-based authentication
+- Email notifications for warranty expiry
+- Web dashboard UI
+- Role-based access
+- Attach purchase receipts (file upload)
