@@ -1,3 +1,4 @@
+
 # 🛡️ Digital Warranty Vault
 
 A Java Spring Boot application for managing digital product warranties securely. This API-based service allows users to store, retrieve, and track product warranties with expiration alerts and multithreaded warranty reminders. Designed for modularity, scalability, and real-world production practices.
@@ -14,6 +15,36 @@ A Java Spring Boot application for managing digital product warranties securely.
 - 🚀 RESTful APIs with proper layered architecture
 - 🧪 Unit and integration testing with JUnit and Mockito
 - 🐳 Docker and Docker Compose support
+
+---
+
+## 🏗️ Project Structure
+
+```
+digital-warranty-vault/
+├── src/
+│   ├── main/
+│   │   ├── java/com/warrantyvault/
+│   │   │   ├── controller/
+│   │   │   ├── service/
+│   │   │   ├── model/
+│   │   │   ├── repository/
+│   │   │   └── config/
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── db/changelog/
+│   │           ├── changelog-master.xml
+│   │           ├── users-changelog.xml
+│   │           └── products-changelog.xml
+│   └── test/
+│       └── java/com/warrantyvault/
+│           ├── controller/
+│           └── service/
+├── Dockerfile
+├── docker-compose.yml
+├── pom.xml
+└── README.md
+```
 
 ---
 
@@ -68,37 +99,59 @@ A scheduled service runs daily using a thread pool to:
 
 ```bash
 docker-compose up --build
+```
 
 This will:
 - Build the Spring Boot app
 - Start MySQL and initialize DB via Liquibase
-- Expose API at http://localhost:8080
+- Expose API at `http://localhost:8080`
 
+---
 
 ### 🔧 Option 2: Manual
+
+```bash
 # Start MySQL (manually or via Docker)
 mvn clean install
 mvn spring-boot:run
-Access: http://localhost:8080/swagger-ui.html (if Swagger is enabled)
+```
 
-### 🧪 Testing
+Access: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+---
+
+## 🧪 Testing
+
 Run all unit and integration tests:
-  mvn test
 
-### 📂 Liquibase Setup
-Master file: changelog-master.xml
+```bash
+mvn test
+```
 
-Includes:
-users-changelog.xml
-products-changelog.xml
-Optional: data-seed-changelog.xml
+---
+
+## 📂 Liquibase Setup
+
+- Master file: `changelog-master.xml`
+- Includes:
+  - `users-changelog.xml`
+  - `products-changelog.xml`
+  - Optional: `data-seed-changelog.xml`
 
 To run Liquibase independently:
-mvn liquibase:update
 
-### ✨ Future Enhancements
+```bash
+mvn liquibase:update
+```
+
+---
+
+## ✨ Future Enhancements
+
 - Add JWT-based authentication
 - Email notifications for warranty expiry
 - Web dashboard UI
 - Role-based access
 - Attach purchase receipts (file upload)
+
+---
