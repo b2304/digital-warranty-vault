@@ -1,9 +1,14 @@
-FROM eclipse-temurin:17-jdk-alpine
+# Use official OpenJDK 17 image from Docker Hub
+FROM openjdk:17-slim
 
+# Set the working directory
 WORKDIR /app
 
-COPY target/warranty-vault-1.0.0.jar app.jar
+# Copy the application jar file into the container
+COPY target/warrantyvault-0.0.1-SNAPSHOT.jar /app/warrantyvault.jar
 
+# Expose port 8080 (the default port for Spring Boot applications)
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "warrantyvault.jar"]

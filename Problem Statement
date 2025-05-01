@@ -1,0 +1,20 @@
+Project Name: Digital Warranty Vault
+Goal:
+
+    Users can upload and manage their product warranties digitally.
+
+    Store info like product name, warranty duration, expiry date, invoice copy link, etc.
+
+Basic Features:
+
+    Add a Warranty
+
+    View all Warranties
+
+    Update Warranty
+
+    Delete Warranty
+
+    Search Warranty (by Product Name)
+
+    Notify for Expiring Warranties (Later)
